@@ -12,14 +12,22 @@ import { appReducer } from './app.reducer';
 import { counterReducer } from './counter/counter.duck';
 import { CounterComponent } from './counter/counter.component';
 import { CatListComponent } from './cat-list/cat-list.component';
+import { CatComponent } from './cat/cat.component';
 import { CatEffects } from './cat.effects';
-import { catReducer } from './cat.duck';
+import { catReducer, CatState } from './cat.duck';
+
+export interface State {
+  app: any;
+  count: any;
+  cats: CatState;
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    CatListComponent
+    CatListComponent,
+    CatComponent
   ],
   imports: [
     BrowserModule,

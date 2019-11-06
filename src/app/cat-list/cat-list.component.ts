@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { loadCats, Cat, CatState } from '../cat.duck';
+import { loadCats, Cat } from '../cat.duck';
+import { State } from '../app.module';
 
 @Component({
   selector: 'app-cat-list',
@@ -9,8 +10,8 @@ import { loadCats, Cat, CatState } from '../cat.duck';
   styleUrls: ['./cat-list.component.scss']
 })
 export class CatListComponent implements OnInit {
-  cats$: Observable<Cat[]> = this.store.select(state => state.cats);
-  constructor(private store: Store<CatState>) {}
+  cats$: Observable<Cat[]> = this.store.select(state => state.cats.cats);
+  constructor(private store: Store<State>) {}
   ngOnInit() {
     this.store.dispatch(loadCats());
   }
