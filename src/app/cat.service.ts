@@ -10,4 +10,8 @@ export class CatService {
   getAll() {
     return this.http.get('https://api.thecatapi.com/v1/images/search?limit=10');
   }
+
+  searchBreed(term: string) {
+    return this.http.get(`https://api.thecatapi.com/v1/breeds/search?q=${term}`);
+  }
 }

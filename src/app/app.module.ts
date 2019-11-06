@@ -15,6 +15,10 @@ import { CatListComponent } from './cat-list/cat-list.component';
 import { CatComponent } from './cat/cat.component';
 import { CatEffects } from './cat.effects';
 import { catReducer, CatState } from './cat.duck';
+import { BreedComponent } from './breed/breed.component';
+import { BreedSearchComponent } from './breed-search/breed-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BreedListComponent } from './breed-list/breed-list.component';
 
 export interface State {
   app: any;
@@ -27,12 +31,16 @@ export interface State {
     AppComponent,
     CounterComponent,
     CatListComponent,
-    CatComponent
+    CatComponent,
+    BreedComponent,
+    BreedSearchComponent,
+    BreedListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     EffectsModule.forRoot([CatEffects]),
     StoreModule.forRoot({app: appReducer, count: counterReducer, cats: catReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production  })
