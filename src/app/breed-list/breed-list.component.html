@@ -1,3 +1,8 @@
 <ul *ngFor="let breed of breeds">
-  <li>{{breed.name}}</li>
+    <li>
+        {{ breed.name }}
+        <button (click)="searchCatWithBreedClicked(breed)">
+            Show cats of this breed
+        </button>
+    </li>
 </ul>

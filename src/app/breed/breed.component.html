@@ -1,2 +1,5 @@
 <app-breed-search (search)="searchBreed($event)"></app-breed-search>
-<app-breed-list [breeds]="breeds$ | async"></app-breed-list>
+<app-breed-list
+    [breeds]="breeds$ | async"
+    (searchCatWithBreed)="searchCatWithBreed($event)"
+></app-breed-list>
