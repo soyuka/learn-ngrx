@@ -1,0 +1,4 @@
+<button (click)="loadCats()">Charge des chats</button>
+<div *ngFor="let cat of cats$ | async">
+  <app-cat [cat]="cat"></app-cat>
+</div>
